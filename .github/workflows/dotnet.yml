@@ -1,11 +1,15 @@
-before_script:
-   - dotnet restore
+name: dotnet package
 
-stages:
-   - welcome
+on: [push]
 
-welcome:
-   stage: welcome
-   script:
-       - echo "Welcome"
+jobs:
+  build:
 
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: welcome
+        with:
+          dotnet-version: '8.x'
+      - run: echo "welcome"
