@@ -1,0 +1,11 @@
+before_script:
+   - dotnet restore
+
+stages:
+   - welcome
+
+welcome:
+   stage: welcome
+   script:
+       - echo "Welcome"
+
